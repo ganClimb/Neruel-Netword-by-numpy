@@ -50,7 +50,7 @@ class EmbeddingLayer(object):
         outputs = np.reshape(outputs,outputs_size) # [batch_szie,seq_len,embedding_dim]
         return outputs 
         
-    def beckward(self,delta):
+    def backward(self,delta):
         # 和全连接层不相同，其他算子一般是全部update，但是Embedding层仅仅需要udpate前向传播使用过的词向量
         '''
         @param delta-->np.array [batch_size,seq_len,embedding_dim]
