@@ -54,7 +54,7 @@ class SingleLinearLayer(object):
     
     
     def backward(self,delta):
-        self.delta_w = np.dot(self.weight.T,delta)
+        self.delta_w = np.dot(self.inputs.T,delta)
         self.delta_b = np.sum(delta , axis = 0)
         delta_backword = np.dot(delta, self.weight.T)
         return delta_backword
